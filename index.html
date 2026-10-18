@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTA Feed Italia | GTA VI Countdown</title>
+
+<style>
+body{
+margin:0;
+background:#000;
+color:white;
+font-family:Arial,sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+}
+
+h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+#countdown{
+font-size:40px;
+color:#ff66cc;
+}
+</style>
+</head>
+<body>
+
+<div>
+<h1>GTA FEED ITALIA</h1>
+<p>Countdown GTA VI</p>
+<div id="countdown"></div>
+</div>
+
+<script>
+const targetDate = new Date("2027-05-26T00:00:00").getTime();
+
+setInterval(() => {
+const now = new Date().getTime();
+const diff = targetDate - now;
+
+const days = Math.floor(diff / (1000*60*60*24));
+const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+const seconds = Math.floor((diff % (1000*60)) / 1000);
+
+document.getElementById("countdown").innerHTML =
+`${days} giorni ${hours} ore ${minutes} min ${seconds} sec`;
+},1000);
+</script>
+
+</body>
+</html>
